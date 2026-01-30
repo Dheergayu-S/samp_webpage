@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Creative Design Agency</title>
+    <style>
+        /* 1. IMAGES */
+        /* max-width: 300px -> Stops it from getting too big on desktop */
+        /* width: 100% -> Allows it to shrink on small tablet screens */
+        img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 5px; /* Optional: adds nice rounded corners */
+        }
+
+        /* 2. CONTAINER (Desktop View) */
+        .my-box {
+            display: flex;       /* Puts items side-by-side */
+            gap: 20px;           /* Space between the two columns */
+            text-align: left;    /* Keeps text aligned to the left */
+            flex-wrap: wrap;     /* SAFETY: If screen is too narrow, let them stack automatically */
+        }
+
+        /* 3. MOBILE VIEW (Phones) */
+        /* When screen is 600px or smaller, force them to stack */
+        @media (max-width: 600px) {
+            .my-box {
+                flex-direction: column;
+            }
+            
+            /* Optional: Make images fill the screen on mobile */
+            img {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -18,13 +49,13 @@
         <div class="my-box">
             
             <div>
-                <img src="Assets/beauty.jpg" alt="Beauty">
+                <img src="src/Assets/beauty.jpg" alt="Beauty">
                 <h2>beauty</h2>
                 <p>Flowers are nature’s delicate art—radiant, fragrant, and diverse.</p>
             </div>
 
             <div>
-                <img src="Assets/cake.jpg" alt="Cake">
+                <img src="src/Assets/cake.jpg" alt="Cake">
                 <h2>cake</h2>
                 <p>Cakes are the center of celebration—sweet, layered, and artistic.</p>
             </div>
